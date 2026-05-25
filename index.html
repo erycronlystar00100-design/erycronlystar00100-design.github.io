@@ -24,6 +24,27 @@
         .video-feed { margin-top: 50px; }
         .video-container { display: flex; gap: 15px; overflow-x: auto; padding: 20px 0; }
         .video-card { min-width: 280px; height: 160px; background: #1e293b; border-radius: 12px; border: 1px solid #334155; display: flex; align-items: center; justify-content: center; color: #64748b; }
+            /* Additional custom styles for expansions */
+        .main-container-mod {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) { .main-container-mod { grid-template-columns: 1fr; } }
+        .section-title-mod { font-size: 1.5rem; color: #4ade80; margin-bottom: 1.5rem; border-bottom: 2px solid #30363d; padding-bottom: 0.5rem; }
+        .project-card-mod { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid #30363d; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .tag-mod { font-size: 0.75rem; background-color: rgba(74, 222, 128, 0.15); color: #4ade80; padding: 0.2rem 0.6rem; border-radius: 20px; border: 1px solid rgba(74, 222, 128, 0.3); }
+        .project-card-mod p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.2rem; }
+        .download-btn-mod { display: inline-flex; align-items: center; background-color: #38bdf8; color: #000; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border: none; cursor: pointer;}
+        .video-sidebar-mod { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid #30363d; border-radius: 8px; padding: 1.5rem; }
+        .video-container-mod { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background-color: #000; margin-bottom: 1rem; }
+        .video-container-mod iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        footer-mod { text-align: center; padding: 2rem; border-top: 1px solid #30363d; margin-top: 4rem; color: #94a3b8; font-size: 0.85rem; display: block; }
+        footer-mod a { color: #38bdf8; text-decoration: none; margin: 0 0.5rem; }
+        footer-mod a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -70,30 +91,132 @@
             <div class="video-card">Loading Daily Videos...</div>
             <div class="video-card">Loading Daily Videos...</div>
         </div>
-    </div>
-</div>
-    <section id="app-store" style="padding: 20px; background: rgba(15, 23, 42, 0.5); border-radius: 20px; margin-top: 20px; border: 1px solid #1e293b;">
-    <h2 style="color: #4ade80;">📲 Hood Ryc App Hub</h2>
-    <p style="font-size: 0.8rem; color: #94a3b8;">Powered by FileCR & APKPure Database</p>
-    
-    <div style="margin: 15px 0; display: flex; gap: 5px;">
-        <input type="text" id="appSearch" placeholder="Search 50,000+ Apps (GTA, Adobe, WhatsApp...)" style="flex: 1; padding: 12px; border-radius: 10px; border: none; background: #1e293b; color: white;">
-        <button class="btn" onclick="findApp()" style="padding: 10px;">Search</button>
-    </div>
+    </div>    <main class="main-container-mod">
+        <div id="projects-mod">
+            <h2 class="section-title-mod">Active Projects & Software Releases</h2>
 
-    <div id="appGrid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-        <div class="app-card" style="background: #1e293b; padding: 15px; border-radius: 12px; text-align: center;">
-            <p style="font-size: 0.8rem;">Adobe Photoshop 2026</p>
-            <button class="btn" style="background:#4ade80; width:100%; font-size:0.7rem;" onclick="appDownload('Photoshop')">DOWNLOAD</button>
+            <div class="project-card-mod">
+                <h3>Stryker-V2 Utility <span class="tag-mod">Android App</span></h3>
+                <p>An advanced, stable network diagnostic and performance-tuning tool designed specifically to run seamlessly without requiring root administrative permissions. Monitor active socket structures, optimize execution parameters, and stabilize connection performance instantly.</p>
+                <a href="https://github.com/erycronlystar00100-design/Stryker-V2/archive/refs/heads/main.zip" class="download-btn-mod">Download Stryker-V2 (ZIP)</a>
+            </div>
+
+            <div class="project-card-mod">
+                <h3>Simulation Optimization Profiles <span class="tag-mod">Game Mods</span></h3>
+                <p>Custom engine asset modifications and layout optimization parameters built for vehicle simulators. Features stable adjustments compatible across telemetry engine updates 1.38 through 1.41, fine-tuned to deliver premium performance stability on configurations running resource-constrained environments.</p>
+                <a href="#" class="download-btn-mod" onclick="alert('Securing server connection... Download starting setup in background.'); return false;">Download Mod Package</a>
+            </div>
         </div>
-        <div class="app-card" style="background: #1e293b; padding: 15px; border-radius: 12px; text-align: center;">
-            <p style="font-size: 0.8rem;">GTA V Mobile APK</p>
-            <button class="btn" style="background:#4ade80; width:100%; font-size:0.7rem;" onclick="appDownload('GTA')">DOWNLOAD</button>
+
+        <div id="showcase-mod">
+            <h2 class="section-title-mod">Video Showcase</h2>
+            <div class="video-sidebar-mod">
+                <div class="video-container-mod">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Project Demonstration Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h4 style="color:#fff; margin-bottom: 0.5rem; margin-top:0;">Mod Testing & Execution</h4>
+                <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">Watch our latest software assets in real-time execution. Testing coverage covers runtime engine stability, memory usage, and asset compression models.</p>
+            </div>
+        </div>
+    </main>
+
+</div>
+    <
+
+    <section class="main-container-mod" style="margin-top: 3rem;">
+        <div>
+            <h2 class="section-title-mod">Trending Entertainment Feed</h2>
+            <p style="color: #8b949e; margin-bottom: 1.5rem;">Stream the latest viral content, tech reviews, and funny community clips directly inside the portal.</p>
+            
+            <div class="project-card-mod">
+                <h3 style="color: #fff; margin-bottom: 1rem;">Viral Comedy & Community Highlights</h3>
+                <div class="video-container-mod">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Viral Video Player" allowfullscreen></iframe>
+                </div>
+                <p>Catch up on the most viewed community clips and viral shorts edited by the Hood Ryc production network.</p>
+            </div>
+
+            <div class="project-card-mod">
+                <h3 style="color: #fff; margin-bottom: 1rem;">Tech Concept & Custom Animations</h3>
+                <div class="video-container-mod">
+                    <iframe src="https://www.youtube.com/embed/3f_p97Wz3d0" title="Animation Player" allowfullscreen></iframe>
+                </div>
+                <section id="app-store" style="padding: 30px 20px; background: rgba(15, 23, 42, 0.4); border-top: 1px solid #1e293b; border-bottom: 1px solid #1e293b;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="color: #4ade80; font-size: 1.5rem; margin-bottom: 5px; display: flex; align-items: center; gap: 10px;">💿 Hood Ryc Software & Game Hub</h2>
+        <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 25px;">Access official, untouched, and 100% safe deployment packages directly from trusted marketplaces.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+            
+            <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #30363d; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <span style="font-size: 0.7rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 1px;">Microsoft OS</span>
+                    <h3 style="color: #fff; font-size: 1.1rem; margin: 5px 0 10px 0;">Windows 11 Setup</h3>
+                    <p style="font-size: 0.75rem; color: #94a3b8; line-height: 1.4; margin-bottom: 15px;">Get the official Media Creation Tool and untouched ISO layout directly from Microsoft servers.</p>
+                </div>
+                <a href="https://www.microsoft.com/software-download/windows11" target="_blank" style="display: block; text-align: center; background: #38bdf8; color: #000; padding: 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">Get From Microsoft</a>
+            </div>
+
+            <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #30363d; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <span style="font-size: 0.7rem; text-transform: uppercase; color: #4ade80; font-weight: 700; letter-spacing: 1px;">Valve Ecosystem</span>
+                    <h3 style="color: #fff; font-size: 1.1rem; margin: 5px 0 10px 0;">Steam Launcher</h3>
+                    <p style="font-size: 0.75rem; color: #94a3b8; line-height: 1.4; margin-bottom: 15px;">Deploy the official Steam client to manage, update, and launch thousands of free-to-play and premium PC games safely.</p>
+                </div>
+                <a href="https://store.steampowered.com/about/" target="_blank" style="display: block; text-align: center; background: #4ade80; color: #000; padding: 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">Get From Steam</a>
+            </div>
+
+            <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #30363d; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <span style="font-size: 0.7rem; text-transform: uppercase; color: #fbbf24; font-weight: 700; letter-spacing: 1px;">Epic Marketplace</span>
+                    <h3 style="color: #fff; font-size: 1.1rem; margin: 5px 0 10px 0;">Epic Games Engine</h3>
+                    <p style="font-size: 0.75rem; color: #94a3b8; line-height: 1.4; margin-bottom: 15px;">Claim free weekly mystery titles and download official multiplayer gaming packages securely.</p>
+                </div>
+                <a href="https://store.epicgames.com/about" target="_blank" style="display: block; text-align: center; background: #fbbf24; color: #000; padding: 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">Get From Epic Store</a>
+            </div>
+
+            <div style="background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #30363d; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <span style="font-size: 0.7rem; text-transform: uppercase; color: #f87171; font-weight: 700; letter-spacing: 1px;">Android Base</span>
+                    <h3 style="color: #fff; font-size: 1.1rem; margin: 5px 0 10px 0;">Google Play Services</h3>
+                    <p style="font-size: 0.75rem; color: #94a3b8; line-height: 1.4; margin-bottom: 15px;">Explore thousands of verified secure mobile apps, core system tools, and optimized gaming architectures.</p>
+                </div>
+                <a href="https://play.google.com/store" target="_blank" style="display: block; text-align: center; background: #f87171; color: #000; padding: 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">Get From Play Store</a>
+            </div>
+
         </div>
     </div>
 </section>
 
+                <p>High-fidelity platform design breakdowns, asset rendering workflows, and utility engineering demonstrations.</p>
+            </div>
+        </div>
 
+        <div>
+            <h2 class="section-title-mod">Social Portals</h2>
+            <div class="video-sidebar-mod">
+                <p style="color: #fff; font-weight: 600; margin-bottom: 1rem;">Connect Across Platforms:</p>
+                
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 1rem;">
+                        <a href="https://www.tiktok.com" target="_blank" class="download-btn-mod" style="width: 100%; justify-content: center; background-color: #000; color: #fff; border: 1px solid #333;">Open TikTok Feed</a>
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <a href="https://www.youtube.com" target="_blank" class="download-btn-mod" style="width: 100%; justify-content: center; background-color: #ff0000; color: #fff;">Open YouTube Hub</a>
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <a href="https://www.instagram.com" target="_blank" class="download-btn-mod" style="width: 100%; justify-content: center; background-color: #e1306c; color: #fff;">Instagram Feed</a>
+                    </li>
+                    <li style="margin-bottom: 0;">
+                        <a href="https://www.facebook.com" target="_blank" class="download-btn-mod" style="width: 100%; justify-content: center; background-color: #1877f2; color: #fff;">Facebook Portal</a>
+                    </li>
+                </ul>
+                
+                <hr style="border: 0; border-top: 1px solid #30363d; margin: 1.5rem 0;">
+                <p style="color: #8b949e; font-size: 0.8rem; margin: 0; text-align: center;">All external embedded feeds are governed under standard community developer terms.</p>
+            </div>
+        </div>
+    </section>
 <script>
     function humanize() {
         const text = document.getElementById('aiInput').value;
@@ -110,26 +233,35 @@
         const query = document.getElementById('chromeSearch').value;
         if(query) window.open('https://www.google.com/search?q=' + query, '_blank');
     }function findApp() {
-    let query = document.getElementById('appSearch').value;
-    if(query) {
-        // First, trigger your Adsterra Smartlink to get paid
-        window.open('https://www.effectivegatecpm.com/znz4eg96u?key=9fd8dced3652ce861f778a9ee636ae5a', '_blank');
-        
-        // Then, redirect the main window to the actual file source
-        setTimeout(() => {
-            window.location.href = "https://filecr.com/search/?q=" + query;
-        }, 1000);
-    } else {
-        alert("Enter an app name!");
-    }
-}
+    
+<section id="app-store" style="padding: 20px; background: rgba(15, 23, 42, 0.3);">
+    <h2 style="color: #4ade80;">🛠️ Hood Ryc Core Utilities</h2>
+    <p style="font-size: 0.8rem; color: #94a3b8;">Powered by Hood Ryc Labz Open-Source Ecosystem</p>
 
-function appDownload(appName) {
-    // Standard download button payment
-    window.open('https://www.effectivegatecpm.com/znz4eg96u?key=9fd8dced3652ce861f778a9ee636ae5a', '_blank');
-}
+    <div style="margin: 15px 0; display: flex; gap: 5px;">
+        <input type="text" id="appSearch" placeholder="Search system utilities..." style="background: #1e293b; border: 1px solid #30363d; color: #fff; padding: 10px; border-radius: 6px; flex-grow: 1;">
+        <button class="btn" onclick="findApp()" style="padding: 10px 20px;">Search</button>
+    </div>
 
+    <div id="appGrid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <div class="app-card" style="background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid #30363d;">
+            <p style="font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 10px;">Hood Ryc Studio Pro (Beta)</p>
+            <button class="btn" onclick="appDownload('Studio Pro')" style="background:#4ade80; color:#000; width:100%; font-size:0.85rem; font-weight:600;">Deploy Asset</button>
+        </div>
+        <div class="app-card" style="background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid #30363d;">
+            <p style="font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 10px;">Stryker Performance Engine</p>
+            <button class="btn" onclick="appDownload('Stryker Engine')" style="background:#4ade80; color:#000; width:100%; font-size:0.85rem; font-weight:600;">Deploy Asset</button>
+        </div>
+    </div>
+</section>
 </script><script src="bot.js"></script
 <script src="https://pl28901805.effectivegatecpm.com/d6/fb/4a/d6fb4ad3fa5bcc19d5b9ac48d4fb837b.js"></script>
+    <footer-mod>
+        <p>© 2026 Hood Ryc Tech & Mods. All rights reserved. Powered by GitHub Pages.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="./privacy-policy.html">Privacy Policy</a> | 
+            <a href="https://github.com/erycronlystar00100-design" target="_blank">GitHub Profile</a>
+        </p>
+    </footer-mod>
 </body>
 </html>
