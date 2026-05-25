@@ -11,41 +11,62 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5216855518779752"
      crossorigin="anonymous"></script>
     <style>
-        :root { --main-bg: #0f172a; --accent: #38bdf8; --glass: rgba(255, 255, 255, 0.05); }
-        body { font-family: 'Inter', sans-serif; background: var(--main-bg); color: white; margin: 0; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .search-hub { text-align: center; margin: 50px 0; }
-        .search-bar { width: 80%; max-width: 600px; padding: 15px 25px; border-radius: 30px; border: 1px solid var(--accent); background: var(--glass); color: white; font-size: 1.1rem; outline: none; box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
-        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: var(--glass); backdrop-filter: blur(10px); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        textarea { width: 100%; height: 100px; border-radius: 8px; margin: 10px 0; background: #1e293b; color: #f8fafc; border: 1px solid #334155; padding: 10px; box-sizing: border-box; }
-        .btn { background: var(--accent); color: #000; padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; }
-        .video-feed { margin-top: 50px; }
-        .video-container { display: flex; gap: 15px; overflow-x: auto; padding: 20px 0; }
-        .video-card { min-width: 280px; height: 160px; background: #1e293b; border-radius: 12px; border: 1px solid #334155; display: flex; align-items: center; justify-content: center; color: #64748b; }
-            /* Additional custom styles for expansions */
-        .main-container-mod {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-        }
-        @media (max-width: 768px) { .main-container-mod { grid-template-columns: 1fr; } }
-        .section-title-mod { font-size: 1.5rem; color: #4ade80; margin-bottom: 1.5rem; border-bottom: 2px solid #30363d; padding-bottom: 0.5rem; }
-        .project-card-mod { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid #30363d; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
-        .tag-mod { font-size: 0.75rem; background-color: rgba(74, 222, 128, 0.15); color: #4ade80; padding: 0.2rem 0.6rem; border-radius: 20px; border: 1px solid rgba(74, 222, 128, 0.3); }
-        .project-card-mod p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.2rem; }
-        .download-btn-mod { display: inline-flex; align-items: center; background-color: #38bdf8; color: #000; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; border: none; cursor: pointer;}
-        .video-sidebar-mod { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid #30363d; border-radius: 8px; padding: 1.5rem; }
-        .video-container-mod { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background-color: #000; margin-bottom: 1rem; }
-        .video-container-mod iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        footer-mod { text-align: center; padding: 2rem; border-top: 1px solid #30363d; margin-top: 4rem; color: #94a3b8; font-size: 0.85rem; display: block; }
-        footer-mod a { color: #38bdf8; text-decoration: none; margin: 0 0.5rem; }
-        footer-mod a:hover { text-decoration: underline; }
-    </style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    
+    :root {
+        /* DYNAMIC 'LABZ' COLOR THEME */
+        --bg-color: #04040a; /* Deepest black base */
+        --main-bg-image: radial-gradient(circle at 50% 50%, #161225 0%, #04040a 100%);
+        --accent-color: #a855f7; /* Tech Purple */
+        --accent-glow: rgba(168, 85, 247, 0.15);
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --card-bg: rgba(255, 255, 255, 0.02);
+        --border-color: rgba(255, 255, 255, 0.05);
+        --glass: rgba(0, 0, 0, 0.6);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+    body {
+        /* FIXED, DYNAMIC BACKGROUND (Reviewer Safe) */
+        background-color: var(--bg-color);
+        background-image: var(--main-bg-image);
+        background-attachment: fixed;
+        color: var(--text-main);
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        padding-bottom: 60px;
+    }
+
+    header {
+        background-color: var(--glass);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -1px; }
+    .logo span { color: var(--accent-color); }
+    
+    nav a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: 0.2s; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    nav a:hover { color: var(--accent-color); }
+
+    .hero { max-width: 1200px; margin: 7rem auto 5rem auto; padding: 0 2rem; text-align: center; }
+    .hero h1 { font-size: 3.5rem; color: #fff; margin-bottom: 1rem; font-weight: 800; letter-spacing: -2px; }
+    .hero p { color: var(--text-muted); font-size: 1.25rem; max-width: 750px; margin: 0 auto; font-weight: 400; line-height: 1.5; }
+    
+    /* Ensuring previously pasted sections maintain compatibility */
+    #download-hub, #projects-mod, #showcase-mod, #lightspeed-partner { margin-top: 3rem; margin-bottom: 3rem;}
+    .section-title-mod { color: #fff !important; }
+    .tag-mod { color: var(--accent-color) !important; background-color: rgba(168, 85, 247, 0.1) !important; border-color: rgba(168, 85, 247, 0.3) !important; }
+    .download-btn-mod { background-color: var(--accent-color) !important; color: #fff !important; }
+</style>
 </head>
 <body>
 
@@ -75,7 +96,10 @@
             <button class="btn" style="background:#4ade80; color:black;" onclick="window.open('https://www.effectivegatecpm.com/znz4eg96u?key=9fd8dced3652ce861f778a9ee636ae5a')">Download .BAT Hub</button>
 
         </div>
-
+<section class="hero">
+    <h1>Welcome to HOOD RYC LABZ</h1>
+    <p>Explore a unified deployment network for verified system utilities, legitimate download gateways, and mobile gaming innovations built at the speed of light.</p>
+</section>
         <div class="card">
             <h3>PDF Summarizer</h3>
             <p style="color: #94a3b8; font-size: 0.9rem;">Upload any document for instant AI summary.</p>
